@@ -1,0 +1,31 @@
+<div class="container">
+
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+  <div class="form-group">
+    <label>Product Id</label>
+    <input name="p_id" ngModel #pid="ngModel" type="number" required class="form-control">
+  </div>
+  <div *ngIf="!pid.valid && pid.touched"  >
+    <span class="alert alert-danger"   >Product Id is required</span>
+  </div>
+  <div class="form-group">
+    <label>Product Name</label>
+    <input name="pname" ngModel type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Product Image</label>
+    <input name="pimg" ngModel type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Product Price</label>
+    <input name="pprice" ngModel type="number" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Soh</label>
+    <input name="soh"   [ngModel]="defaultValue" type="number" class="form-control">
+  </div>
+  <div class="form-group" >
+<button type="submit" [disabled]="!f.valid" class="btn btn-primary" >Add Product</button>
+  </div>
+</form>
+</div>
