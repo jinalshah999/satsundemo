@@ -1,0 +1,13 @@
+
+<div class="row">
+  <div class="col-md-3">
+    <app-test [result]="cat_name" (jinal)="onJinal($event)" ></app-test>
+  </div>
+  <div class="col-md-9">
+    <ul>
+      <li *ngFor="let item of arr" >{{item}}</li>
+    </ul>
+
+  </div>
+</div>
+
